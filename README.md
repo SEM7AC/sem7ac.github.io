@@ -5,7 +5,7 @@ It’s a simple, clean HTML/CSS site that showcases my projects, background, and
 
 Live site:  
 **https://sem7ac.github.io**  
-**https://christophersemler.com**
+
 
 The portfolio highlights:
 - Current .NET projects (VoidPulse, AirTrack, CodeActivityTracker)
