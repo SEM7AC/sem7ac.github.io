@@ -1,0 +1,231 @@
+/* GLOBAL */
+body {
+    margin: 0;
+    font-family: Inter, Arial, sans-serif;
+    background: linear-gradient(135deg, #0d0e11, #001f3f);
+    color: #e6e9ef;
+    padding-bottom: 80px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+/* HERO */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 0 40px; /* more top weight, tighter bottom */
+    gap: 40px; /* fixes cramped layout */
+    background: radial-gradient(circle at top left, rgba(255,255,255,0.03), transparent 70%);
+}
+
+.hero-text h1 {
+    font-size: 3.2rem; /* bigger anchor */
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: -1px; /* modern, confident */
+    color: #f0f3f8; /* slightly brighter */
+    padding-left: 20px; /* subtle offset for visual interest */
+}
+
+.hero-text p {
+    color: #3399ff; /* accent color for emphasis */
+    padding-left: 20px; /* consistent with h1 */
+}
+
+.hero-role {
+    margin-top: 8px;
+    font-size: 1.2rem;
+    color: #9fc7ff;
+    font-weight: 500;
+    
+}
+
+.hero-tagline {
+    margin-top: 14px;
+    font-size: 1.1rem;
+    color: #cfd3da;
+    opacity: 0.9;
+    max-width: 480px;
+    line-height: 1.45;
+    
+}
+
+.cta {
+    margin-top: 22px;
+    display: inline-block;
+    padding: 12px 28px;
+    background: linear-gradient(90deg, #0050a0, #3399ff);
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    transition: 0.2s ease;
+    margin-left: 20px; /* aligns with text padding for visual balance */
+}
+
+.cta:hover {
+    background: linear-gradient(90deg, #3399ff, #66b2ff);
+    transform: translateY(-2px);
+}
+
+.hero-img img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%; /* looks intentional, not passport */
+    border: 2px solid rgba(255,255,255,0.15);
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    object-fit: cover;
+}
+
+/* SECTION HEADERS */
+h2 {
+    margin-top: 50px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    border-left: 4px solid rgba(255,255,255,0.15);
+    padding-left: 10px;
+    color: #e6e9ef;
+}
+
+/* ABOUT */
+.about {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* forces both columns to match height */
+    gap: 40px;
+    padding: 40px 0;
+    flex-direction: row; /* image left, text right */
+}
+
+.about-img {
+    flex: 0 0 260px; /* fixed width like hero image */
+    display: flex;
+    align-items: stretch; /* match text height */
+}
+
+.about-img img {
+    width: 100%;
+    height: 100%; /* MATCH TEXT HEIGHT */
+    object-fit: cover; /* fills the column cleanly */
+    border-radius: 8px;
+    opacity: 0.9;
+    filter: brightness(0.9);
+}
+
+.about-text {
+    flex: 1;
+    line-height: 1.55;
+    color: #cfd3da;
+    font-size: 1rem;
+}
+
+
+
+
+/* PROJECTS */
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.project-card {
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.08);
+
+    display: flex;              /* make card a vertical flexbox */
+    flex-direction: column;     /* stack content top → bottom */
+}
+
+
+.project-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.project-card h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: #e6e9ef;
+}
+
+.project-card p {
+    opacity: 0.9;
+    margin: 8px 0 15px;
+    color: #cfd3da;
+    font-size: 0.95rem;
+}
+
+.buttons {
+    margin-top: auto;           /* pushes buttons to the bottom */
+    display: flex;
+    gap: 10px;
+}
+
+
+.buttons a {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 8px 16px;
+    background: #0050a0;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fff;
+    transition: 0.2s;
+    font-size: 0.9rem;
+}
+
+.buttons a:hover {
+    background: #0066cc;
+}
+
+/* CONTACT GRID */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 250px;
+    gap: 30px;
+    margin-top: 30px;
+    background: rgba(255,255,255,0.04);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.contact-left p {
+    margin: 10px 0;
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+.contact-right ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-right li {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+.contact-right a {
+    color: #7fbfff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-right a:hover {
+    text-decoration: underline;
+}
