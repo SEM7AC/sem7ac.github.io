@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Activity Tracker | SEM7AC</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="cats.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <a href="index.html" class="back-link">
+            ← Back to Portfolio
+        </a>
+
+        <section class="cats-hero">
+
+            <div class="hero-copy">
+
+                <div class="eyebrow">
+                    WINDOWS DESKTOP UTILITY
+                </div>
+
+                <h1>
+                    Code Activity
+                    Tracker
+                </h1>
+
+                <p class="hero-description">
+                    Code Activity Tracker (CATS) is a lightweight Windows utility
+                    built with .NET 10 that monitors real developer activity using
+                    operating-system signals including keyboard input, mouse movement,
+                    Visual Studio interaction, idle time, and debugging activity.
+                    The goal was simple: measure how development time is actually
+                    spent without relying on manual time tracking or arbitrary
+                    productivity scores.
+                </p>
+
+                <div class="buttons">
+
+                    <a href="https://github.com/SEM7AC/CodeActivityTracker"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Source Code
+                    </a>
+
+                    <a href="https://github.com/SEM7AC/CodeActivityTracker/releases/latest" 
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Download
+                    </a>
+                    <a href="https://github.com/SEM7AC/CodeActivityTracker/tree/master/docs" 
+                       target="_blank" 
+                       rel="noopener noreferrer">Docs
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section>
+
+            <img src="images/cats1.png"
+                 alt="Code Activity Tracker"
+                 class="hero-image">
+
+        </section>
+
+        <section class="stats-bar">
+
+            <div class="stat">
+                <span>.NET 10</span>
+                <p>Desktop Application</p>
+            </div>
+
+            <div class="stat">
+                <span>5</span>
+                <p>Activity Signals</p>
+            </div>
+
+            <div class="stat">
+                <span>Real-Time</span>
+                <p>Activity Tracking</p>
+            </div>
+
+            <div class="stat">
+                <span>Windows</span>
+                <p>Native Monitoring</p>
+            </div>
+
+        </section>
+
+        <section>
+
+            <div class="section-title">
+                <h2>What It Tracks</h2>
+            </div>
+
+            <div class="challenge-grid">
+
+                <div class="challenge-card">
+                    <strong>Typing Activity</strong>
+                    Detects active keyboard usage with cooldown logic to avoid
+                    inflating activity metrics.
+                </div>
+
+                <div class="challenge-card">
+                    <strong>IDE Activity</strong>
+                    Tracks engagement with Visual Studio and active development work.
+                </div>
+
+                <div class="challenge-card">
+                    <strong>Debugger Activity</strong>
+                    Detects active debugging sessions occurring outside the tracker process.
+                </div>
+
+                <div class="challenge-card">
+                    <strong>Mouse Activity</strong>
+                    Monitors developer interaction without relying solely on typing.
+                </div>
+
+                <div class="challenge-card">
+                    <strong>Idle Time</strong>
+                    Uses operating-system input timestamps to identify inactivity.
+                </div>
+
+                <div class="challenge-card">
+                    <strong>Session Summaries</strong>
+                    Generates historical records with activity percentages and classifications.
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="story-section">
+
+            <div class="story-text">
+
+                <div class="section-label">
+                    WHY I BUILT IT
+                </div>
+
+                <h2>
+                    I wanted to know where my development time was actually going.
+                </h2>
+
+                <p>
+                    Most productivity tools depend on manual time tracking or
+                    simplistic productivity scores that do not reflect how software
+                    development really works.
+                </p>
+
+                <p>
+                    I built Code Activity Tracker to measure actual behavior using
+                    operating-system signals. The application continuously monitors
+                    typing, IDE usage, debugging activity, mouse movement, and idle
+                    time to produce a more realistic view of development sessions.
+                </p>
+
+            </div>
+
+            <div class="story-image">
+
+                <img src="images/logs.png"
+                     alt="Code Activity Tracker Logs">
+
+            </div>
+
+        </section>
+
+        <details class="technical-details">
+
+            <summary>
+                The Hardest Problem
+            </summary>
+
+            <div class="technical-details-content">
+
+                <div class="story-text">
+
+                    <div class="section-label">
+                        DEBUGGER DETECTION
+                    </div>
+
+                    <h2>
+                        Detecting external debugging sessions turned into the hardest problem in the project.
+                    </h2>
+
+                    <p>
+                        Code Activity Tracker was originally built to answer a simple
+                        question: where does development time actually go? Typing,
+                        reading code, debugging, and idle time all contribute to a
+                        development session, so accurate debugger detection became a
+                        core requirement.
+                    </p>
+
+                    <p>
+                        The challenge was that the tracker runs as a completely separate
+                        process. Standard APIs such as Debugger.IsAttached only identify
+                        whether the current process is being debugged, making them
+                        ineffective for detecting external debugging sessions.
+                    </p>
+
+                    <p>
+                        What appeared to be a simple problem quickly turned into a deep
+                        investigation. Parent-process tracing, WMI queries, process-tree
+                        analysis, handle inspection, thread-state monitoring, CPU
+                        sampling, window correlation, and Visual Studio helper-process
+                        tracking were all tested and ultimately discarded due to false
+                        positives, inconsistent results, or reliability issues.
+                    </p>
+
+                    <p>
+                        Web applications proved especially difficult because Visual
+                        Studio often launches multiple processes, services, and helper
+                        components behind the scenes. Identifying the actual debug
+                        target from outside the debugging session became far more
+                        complicated than expected.
+                    </p>
+
+                    <p>
+                        The final implementation relied on Visual Studio's active window
+                        information and process correlation to determine whether a
+                        debugging session was active. The solution ended up being much
+                        simpler than many of the approaches investigated and proved to
+                        be the most reliable in real-world use.
+                    </p>
+
+                    <p>
+                        I documented the entire investigation, including the failed
+                        approaches, reasoning, and final implementation in a dedicated
+                        article.
+                    </p>
+
+                    <div class="buttons">
+
+                        <a href="https://dev.to/sem7ac/visual-studio-2026-debugger-detection-failure-5fip"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            Read Full Article
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </details>
+
+        <section>
+
+            <div class="section-title">
+                <h2>How It Works</h2>
+            </div>
+
+            <div class="architecture-card">
+
+                <div class="architecture-node">
+                    Keyboard Activity
+                </div>
+
+                <div class="architecture-arrow">
+                    ↓
+                </div>
+
+                <div class="architecture-node">
+                    Mouse Activity
+                </div>
+
+                <div class="architecture-arrow">
+                    ↓
+                </div>
+
+                <div class="architecture-node">
+                    IDE Activity
+                </div>
+
+                <div class="architecture-arrow">
+                    ↓
+                </div>
+
+                <div class="architecture-node">
+                    Debugger Detection
+                </div>
+
+                <div class="architecture-arrow">
+                    ↓
+                </div>
+
+                <div class="architecture-node">
+                    Session Classification & Logging
+                </div>
+
+            </div>
+
+        </section>
+
+        <section>
+
+            <div class="section-title">
+                <h2>Technology Stack</h2>
+            </div>
+
+            <div class="tech-stack">
+
+                <span>.NET 10</span>
+                <span>C#</span>
+                <span>WPF</span>
+                <span>Windows API</span>
+                <span>Timers</span>
+                <span>Process Inspection</span>
+                <span>Visual Studio Detection</span>
+                <span>Logging</span>
+
+            </div>
+
+        </section>
+
+        <section class="final-cta">
+
+            <div class="section-title">
+                <h2>Explore The Project</h2>
+            </div>
+
+            <p>
+                View the source code to see how Code Activity Tracker monitors
+                development activity, classifies sessions, and tackles the problem
+                of external debugger detection.
+            </p>
+
+            <div class="buttons">
+
+                <a href="https://github.com/SEM7AC/CodeActivityTracker"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Source Code
+                </a>
+                <a href="https://github.com/SEM7AC/CodeActivityTracker/releases/latest"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Download
+                </a>
+                <a href="https://github.com/SEM7AC/CodeActivityTracker/tree/master/docs"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Docs
+                </a>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</body>
+</html>
