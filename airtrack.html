@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AirTrack | SEM7AC</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="airtrack.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <a href="index.html" class="back-link">
+            ← Back to Portfolio
+        </a>
+
+        <section class="airtrack-hero">
+
+            <div class="hero-copy">
+
+                <div class="eyebrow">
+                    FLIGHT OPERATIONS SOFTWARE
+                </div>
+
+                <h1>
+                    Aircraft Dispatch,
+                    Scheduling &
+                    Maintenance Tracking
+                </h1>
+
+                <p class="hero-description">
+                    AirTrack is a flight operations platform built for small
+                    training organizations. It centralizes fleet management,
+                    maintenance tracking, personnel administration, dispatch
+                    visibility, and flight scheduling into a single real-time
+                    system built with .NET 8 and Blazor Server and deployed
+                    on Microsoft Azure.
+                </p>
+
+                <div class="buttons">
+
+                    <a href="https://github.com/SEM7AC/AirTrack"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Source Code
+                    </a>
+
+                    <a href="https://airtrack.azurewebsites.net"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Live Demo
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section>
+
+            <img src="images/dashboard.png"
+                 alt="AirTrack Dashboard"
+                 class="hero-image">
+
+        </section>
+
+        <section class="stats-bar">
+
+            <div class="stat">
+                <span>4</span>
+                <p>Aircraft Types</p>
+            </div>
+
+            <div class="stat">
+                <span>8</span>
+                <p>Operational Modules</p>
+            </div>
+
+            <div class="stat">
+                <span>Azure</span>
+                <p>Hosted Deployment</p>
+            </div>
+
+            <div class="stat">
+                <span>.NET 8</span>
+                <p>Blazor Server</p>
+            </div>
+
+        </section>
+
+        <section>
+
+            <div class="section-title">
+                <h2>Core Modules</h2>
+            </div>
+
+            <div class="challenge-grid">
+
+                <div class="challenge-card">
+                    <strong>Dashboard</strong><br>
+                    Fleet overview and operational visibility.
+                </div>
+
+                <div class="challenge-card">
+                    <strong>Aircraft</strong><br>
+                    Aircraft records and fleet management.
+                </div>
+
+                <div class="challenge-card">
+                    <strong>Maintenance</strong><br>
+                    Squawk tracking and mechanic sign-off workflows.
+                </div>
+
+                <div class="challenge-card">
+                    <strong>Scheduler</strong><br>
+                    Aircraft and personnel scheduling.
+                </div>
+
+                <div class="challenge-card">
+                    <strong>Instructors</strong><br>
+                    Instructor roster and student assignments.
+                </div>
+
+                <div class="challenge-card">
+                    <strong>Students</strong><br>
+                    Student management and training relationships.
+                </div>
+
+                <div class="challenge-card">
+                    <strong>Mechanics</strong><br>
+                    Maintenance personnel management.
+                </div>
+
+                <div class="challenge-card">
+                    <strong>Reports</strong><br>
+                    Fleet and maintenance reporting.
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="story-section reverse">
+
+            <div class="story-image">
+
+                <img src="images/aircraft.png"
+                     alt="Aircraft Management">
+
+            </div>
+
+            <div class="story-text">
+
+                <div class="section-label">
+                    AIRCRAFT MODELING
+                </div>
+
+                <h2>
+                    Designed around a flexible aircraft hierarchy.
+                </h2>
+
+                <p>
+                    AirTrack uses Entity Framework Core Table-Per-Type inheritance
+                    to model aircraft categories while maintaining a shared
+                    operational foundation.
+                </p>
+
+                <p>
+                    Shared functionality exists within AircraftBase while
+                    individual aircraft types maintain specialized properties
+                    and behaviors.
+                </p>
+
+                <ul>
+                    <li>Cessna Skyhawk</li>
+                    <li>Piper Arrow</li>
+                    <li>Piper Seminole</li>
+                    <li>Robinson R44</li>
+                </ul>
+
+            </div>
+
+        </section>
+
+        <section class="story-section">
+
+            <div class="story-text">
+
+                <div class="section-label">
+                    MAINTENANCE & OPERATIONS
+                </div>
+
+                <h2>
+                    Aircraft availability is determined in real time.
+                </h2>
+
+                <p>
+                    Maintenance defects are tracked through a centralized
+                    squawk system that records issue details, grounding status,
+                    mechanic resolution notes, and return-to-service actions.
+                </p>
+
+                <p>
+                    Aircraft operational status updates automatically from
+                    active maintenance records and scheduled flight activity.
+                </p>
+
+            </div>
+
+            <div class="story-image">
+
+                <img src="images/mx.png"
+                     alt="Maintenance Tracking">
+
+            </div>
+
+        </section>
+
+        <section class="story-section reverse">
+
+            <div class="story-image">
+
+                <img src="images/schedule.png"
+                     alt="Flight Scheduler">
+
+            </div>
+
+            <div class="story-text">
+
+                <div class="section-label">
+                    FLIGHT SCHEDULING
+                </div>
+
+                <h2>
+                    Coordinate aircraft, instructors, and students.
+                </h2>
+
+                <p>
+                    The scheduler acts as the operational center of the system,
+                    connecting aircraft, instructors, students, and mechanics
+                    through a unified scheduling experience.
+                </p>
+
+                <p>
+                    All event data is stored in UTC and displayed in Pacific Time,
+                    providing reliable scheduling across the application.
+                </p>
+
+            </div>
+
+        </section>
+
+        <section>
+
+            <div class="section-title">
+                <h2>Application Screenshots</h2>
+            </div>
+
+            <div class="gallery">
+
+                <img src="images/dashboard.png"
+                     alt="AirTrack Dashboard">
+
+                <img src="images/aircraft.png"
+                     alt="Aircraft Management">
+
+                <img src="images/mx.png"
+                     alt="Maintenance Tracking">
+
+                <img src="images/report1.png"
+                     alt="Daily Flight Report">
+
+                <img src="images/report2.png"
+                     alt="Aircraft Status Report">
+
+                <img src="images/report3.png"
+                     alt="Open Squawks Report">
+
+            </div>
+
+        </section>
+
+        <details class="technical-details">
+
+            <summary>
+                Technical Details
+            </summary>
+
+            <div class="technical-details-content">
+
+                <section>
+
+                    <div class="section-title">
+                        <h2>Application Design</h2>
+                    </div>
+
+                    <div class="architecture-card">
+
+                        <div class="architecture-node">
+                            Blazor Server UI
+                        </div>
+
+                        <div class="architecture-arrow">
+                            ↓
+                        </div>
+
+                        <div class="architecture-node">
+                            DbHelper Service
+                        </div>
+
+                        <div class="architecture-arrow">
+                            ↓
+                        </div>
+
+                        <div class="architecture-node">
+                            Entity Framework Core
+                        </div>
+
+                        <div class="architecture-arrow">
+                            ↓
+                        </div>
+
+                        <div class="architecture-node">
+                            SQLite
+                        </div>
+
+                    </div>
+
+                    <div class="challenge-grid" style="margin-top:30px;">
+
+                        <div class="challenge-card">
+                            AirTrack uses a single Blazor Server application rather
+                            than a separate API architecture.
+                        </div>
+
+                        <div class="challenge-card">
+                            Data access is centralized through a scoped DbHelper
+                            service to keep database interactions consistent.
+                        </div>
+
+                        <div class="challenge-card">
+                            TimeHelper provides UTC-to-Pacific conversion to maintain
+                            reliable scheduling behavior.
+                        </div>
+
+                        <div class="challenge-card">
+                            Custom SanitizeInputMiddleware processes incoming requests
+                            before application logic executes.
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <section>
+
+                    <div class="section-title">
+                        <h2>Engineering Decisions</h2>
+                    </div>
+
+                    <div class="challenge-grid">
+
+                        <div class="challenge-card">
+                            Table-Per-Type inheritance for aircraft modeling and extensibility.
+                        </div>
+
+                        <div class="challenge-card">
+                            Dynamic aircraft operational status based on active squawks.
+                        </div>
+
+                        <div class="challenge-card">
+                            UTC storage with Pacific Time presentation.
+                        </div>
+
+                        <div class="challenge-card">
+                            Single-application Blazor Server architecture.
+                        </div>
+
+                        <div class="challenge-card">
+                            Global request sanitization through custom middleware.
+                        </div>
+
+                        <div class="challenge-card">
+                            Centralized data access through a scoped DbHelper service.
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </details>
+
+        <section>
+
+            <div class="section-title">
+                <h2>Technology Stack</h2>
+            </div>
+
+            <div class="tech-stack">
+
+                <span>.NET 8</span>
+                <span>C#</span>
+                <span>Blazor Server</span>
+                <span>Entity Framework Core</span>
+                <span>SQLite</span>
+                <span>LINQ</span>
+                <span>Bootstrap</span>
+
+            </div>
+
+        </section>
+
+        <section class="final-cta">
+
+            <div class="section-title">
+                <h2>Explore The Project</h2>
+            </div>
+
+            <p>
+                Review the source code or interact with the live Azure deployment
+                to explore AirTrack's scheduling, fleet management, maintenance
+                tracking, and operational workflows.
+            </p>
+
+            <div class="buttons">
+
+                <a href="https://github.com/SEM7AC/AirTrack"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Source Code
+                </a>
+
+                <a href="https://airtrack.azurewebsites.net"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Live Demo
+                </a>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</body>
+</html>
