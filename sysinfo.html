@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEM7AC.SystemInfo | SEM7AC</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="sysinfo.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <a href="index.html" class="back-link">
+            ← Back to Portfolio
+        </a>
+
+        <section class="systeminfo-hero">
+
+            <div class="hero-copy">
+
+                <div class="eyebrow">
+                    NUGET PACKAGE
+                </div>
+
+                <h1>
+                    SEM7AC.
+                    SystemInfo
+                </h1>
+
+                <p class="hero-description">
+                    A lightweight .NET library for retrieving CPU, memory,
+                    storage, and operating system information through a clean,
+                    strongly-typed API. Built to eliminate repetitive WMI code,
+                    reduce boilerplate, and provide a modern developer-friendly
+                    approach to system information retrieval.
+                </p>
+
+                <div class="buttons">
+
+                    <a href="https://github.com/SEM7AC/SEM7AC.SystemInfo"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Repo
+                    </a>
+
+                    <a href="https://www.nuget.org/packages/SEM7AC.SystemInfo/"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        NuGet
+                    </a>
+
+                    <a href="https://github.com/SEM7AC/SEM7AC.SystemInfo/tree/master/SEM7AC.SystemInfo/docs"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Docs
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="stats-bar">
+
+            <div class="stat">
+                <span>CPU</span>
+                <p>Hardware Information</p>
+            </div>
+
+            <div class="stat">
+                <span>Memory</span>
+                <p>System Metrics</p>
+            </div>
+
+            <div class="stat">
+                <span>Storage</span>
+                <p>Drive Information</p>
+            </div>
+
+            <div class="stat">
+                <span>OS</span>
+                <p>Platform Details</p>
+            </div>
+
+        </section>
+
+        <section>
+
+            <div class="section-title">
+                <h2>The Problem</h2>
+            </div>
+
+            <div class="story-text">
+
+                <p>
+                    Retrieving system information in .NET often means dealing
+                    with WMI queries, legacy APIs, ManagementObjectSearcher,
+                    verbose boilerplate, and inconsistent results.
+                </p>
+
+                <p>
+                    While building desktop applications and monitoring tools,
+                    I found myself repeatedly writing the same system information
+                    code. I wanted a small, dependency-free library that exposed
+                    common machine information through a predictable modern API.
+                </p>
+
+            </div>
+
+        </section>
+
+        <section>
+
+            <div class="section-title">
+                <h2>The Solution</h2>
+            </div>
+
+            <div class="challenge-grid">
+
+                <div class="challenge-card">
+                    <strong>CPU Information</strong>
+                    Retrieve processor details including name, cores,
+                    logical processors, and clock speed.
+                </div>
+
+                <div class="challenge-card">
+                    <strong>Memory Information</strong>
+                    Access total memory, available memory,
+                    utilization, and load metrics.
+                </div>
+
+                <div class="challenge-card">
+                    <strong>Storage Information</strong>
+                    Enumerate system drives with capacity,
+                    free space, format, and drive type.
+                </div>
+
+                <div class="challenge-card">
+                    <strong>Operating System Information</strong>
+                    Retrieve OS version, architecture,
+                    boot time, and platform details.
+                </div>
+
+                <div class="challenge-card">
+                    <strong>No Dependencies</strong>
+                    Lightweight implementation with no
+                    external packages required.
+                </div>
+
+                <div class="challenge-card">
+                    <strong>Strongly Typed Models</strong>
+                    Structured data returned through clean,
+                    developer-friendly classes.
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="installation">
+
+            <div class="section-title">
+                <h2>Installation</h2>
+            </div>
+
+            <div class="architecture-card">
+
+<pre><code>dotnet add package SEM7AC.SystemInfo</code></pre>
+
+            </div>
+
+        </section>
+
+        <section>
+
+            <div class="section-title">
+                <h2>Usage Example</h2>
+            </div>
+
+            <div class="architecture-card">
+
+<pre><code>var info = new SystemInfoProvider();
+
+var cpu = info.GetCpuInfo();
+var memory = info.GetMemoryInfo();
+var drives = info.GetStorageInfo();
+var os = info.GetOsInfo();</code></pre>
+
+            </div>
+
+        </section>
+
+        <section>
+
+            <div class="section-title">
+                <h2>How It Works</h2>
+            </div>
+
+            <div class="architecture-card">
+
+                <div class="architecture-node">
+                    Windows System APIs
+                </div>
+
+                <div class="architecture-arrow">
+                    ↓
+                </div>
+
+                <div class="architecture-node">
+                    SEM7AC.SystemInfo
+                </div>
+
+                <div class="architecture-arrow">
+                    ↓
+                </div>
+
+                <div class="architecture-node">
+                    Strongly Typed Models
+                </div>
+
+                <div class="architecture-arrow">
+                    ↓
+                </div>
+
+                <div class="architecture-node">
+                    Applications & Tools
+                </div>
+
+            </div>
+
+        </section>
+
+        <details class="technical-details">
+
+            <summary>
+                Design Goals
+            </summary>
+
+            <div class="technical-details-content">
+
+                <div class="challenge-grid">
+
+                    <div class="challenge-card">
+                        Replace repetitive WMI-heavy code with a cleaner API.
+                    </div>
+
+                    <div class="challenge-card">
+                        Keep the package lightweight and dependency-free.
+                    </div>
+
+                    <div class="challenge-card">
+                        Return predictable strongly-typed models.
+                    </div>
+
+                    <div class="challenge-card">
+                        Provide an easy integration experience for .NET developers.
+                    </div>
+
+                    <div class="challenge-card">
+                        Serve as a reusable foundation for future tooling projects.
+                    </div>
+
+                    <div class="challenge-card">
+                        Minimize setup and onboarding friction.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </details>
+
+        <section>
+
+            <div class="section-title">
+                <h2>Technology Stack</h2>
+            </div>
+
+            <div class="tech-stack">
+
+                <span>.NET</span>
+                <span>C#</span>
+                <span>NuGet</span>
+                <span>Class Library</span>
+                <span>Windows APIs</span>
+                <span>Strongly Typed Models</span>
+
+            </div>
+
+        </section>
+
+        <section class="final-cta">
+
+            <div class="section-title">
+                <h2>Explore The Package</h2>
+            </div>
+
+            <p>
+                View the source code, package documentation, and installation
+                instructions to integrate SEM7AC.SystemInfo into your own
+                .NET applications.
+            </p>
+
+            <div class="buttons">
+
+                <a href="https://github.com/SEM7AC/SEM7AC.SystemInfo"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Repo
+                </a>
+
+                <a href="https://www.nuget.org/packages/SEM7AC.SystemInfo/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    NuGet
+                </a>
+
+                <a href="https://github.com/SEM7AC/SEM7AC.SystemInfo/tree/master/SEM7AC.SystemInfo/docs"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Docs
+                </a>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</body>
+</html>
